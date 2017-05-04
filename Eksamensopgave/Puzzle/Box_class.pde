@@ -22,19 +22,21 @@ class Box {
     if (mouseX > x-boxSize && mouseX < x+boxSize && 
       mouseY > y-boxSize && mouseY < y+boxSize) {
       overBox = true;  
-      if (!locked) { 
+      if (!locked) {  
         stroke(255); 
         fill(153);
       }
     } else {
       noStroke();
-      //fill(153);
+      
       overBox = false;
     }
   }
 
   void display() {
     rectMode(RADIUS);
+    if (overBox && locked) fill(255);
+    else fill(153);
     rect(x, y, boxSize, boxSize);
   }
 }

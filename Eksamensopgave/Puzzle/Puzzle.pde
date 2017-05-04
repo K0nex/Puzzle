@@ -39,9 +39,15 @@ myChecker = new Checker();
 
 void draw() {   
   background(#00ECFF); //tyrkisblå
+  
+  if (sqrt(pow(abs(myHouse.x - myBox1.x),2)+pow(abs(myHouse.y - myBox1.y),2)) < 100)
+    println("close");
+    else println("not close");
 
   myTriangle.check();
   myTriangle.display();
+  
+  //stroke(0);
 
   myBox1.check();
   myBox1.display();
@@ -61,10 +67,10 @@ void mousePressed() { //https://processing.org/examples/mousefunctions.html
     obj.yOffset = mouseY-obj.y;
     if (obj.overBox) { 
       obj.locked = true; 
-      fill(255);
       file.play();
       return;
     } else {
+      
       obj.locked = false;
     }
   }

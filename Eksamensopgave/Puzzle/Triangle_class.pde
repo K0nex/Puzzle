@@ -28,6 +28,8 @@ class Triangle extends Box {
   }
 
   void display() {
+    if (overBox && locked) fill(255);
+    else fill(153);
     triangle(x, y, x+80, y-80, x+160, y);
   }
 }
