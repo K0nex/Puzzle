@@ -4,6 +4,9 @@ import processing.sound.*;
 SoundFile fileBox;
 SoundFile fileTriangle;
 
+boolean boxHome = false;
+boolean triangleHome = false;
+
 ArrayList<Box> gameObjects;
 Box myBox1;
 
@@ -44,13 +47,21 @@ void draw() {
   //myChecker.check();
   myHouse.display();
 
-  //if (sqrt(pow(abs(myHouse.x - myBox1.x), 2)+pow(abs(myHouse.y-80 - myBox1.y), 2)) < 10) 
-  // println("close");
-  //else println("not close");
+  if (sqrt(pow(abs(myHouse.x - myBox1.x), 2)+pow(abs(myHouse.y-80 - myBox1.y), 2)) < 10) {
+    boxHome = true;
+    if (sqrt(pow(abs(myHouse.x-80 - myTriangle1.x), 2)+pow(abs(myHouse.y-150 - myTriangle1.y), 2)) < 10) {
+      triangleHome = true;
+    }
+  }
 
-  if (sqrt(pow(abs(myHouse.x-80 - myTriangle1.x), 2)+pow(abs(myHouse.y-150 - myTriangle1.y), 2)) < 10)
-    println("close");
-  else println("not close");
+  if (boxHome==true && triangleHome==true) {
+    pushStyle();
+    textSize(100);
+    fill(0);
+    textAlign(CENTER);
+    text("Godt klaret", width/2, height/4);
+    popStyle();
+  }
 }
 
 void mousePressed() { //https://processing.org/examples/mousefunctions.html
