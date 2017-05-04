@@ -29,9 +29,6 @@ class House extends Box {
   }
 
   void display() {
-    pushStyle();
-    translate(0, -100);
     shape(house); // Draw the group
-    popStyle();
   }
 }

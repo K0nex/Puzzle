@@ -12,8 +12,12 @@ Triangle myTriangle;
 
 House myHouse;
 
+Checker myChecker;
+
 void setup() {
   size(700, 700);
+
+myChecker = new Checker();
 
   myHouse = new House();
 
@@ -44,6 +48,8 @@ void draw() {
 
   myBox2.check();
   //myBox2.display();
+
+myChecker.check();
 
   myHouse.display();
 }

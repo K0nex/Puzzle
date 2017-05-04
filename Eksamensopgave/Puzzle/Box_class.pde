@@ -9,7 +9,7 @@ class Box {
 
   Box() {
     x = width/2.0;
-    y = height/2.0;
+    y = height/2.0-100;
   }
 
   Box(float setx, float sety) {
