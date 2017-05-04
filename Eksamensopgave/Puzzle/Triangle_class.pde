@@ -22,14 +22,27 @@ class Triangle extends Box {
       }
     } else {
       noStroke();
-      //fill(153);
       overBox = false;
     }
   }
 
   void display() {
-    if (overBox && locked) fill(255);
-    else fill(153);
+    if (overBox && locked) {
+      fill(255);
+    } else {
+      fill(153);
+    }
     triangle(x, y, x+80, y-80, x+160, y);
+  }
+
+  void teller() {
+    if (locked==true && soundTriggered==false) {
+      fileTriangle.play();
+      soundTriggered = true;
+    } 
+    if (locked==false && soundTriggered==true) {
+      soundTriggered = false;
+      return;
+    }
   }
 }

@@ -4,6 +4,8 @@ class Box {
   int boxSize = 80;
   boolean overBox = false;
   boolean locked = false;
+  boolean presBox = false;
+  boolean soundTriggered = false;
   float xOffset = 0.0; 
   float yOffset = 0.0;
 
@@ -28,15 +30,28 @@ class Box {
       }
     } else {
       noStroke();
-      
       overBox = false;
     }
   }
 
   void display() {
     rectMode(RADIUS);
-    if (overBox && locked) fill(255);
-    else fill(153);
+    if (overBox && locked) {
+      fill(255);
+    } else {
+      fill(153);
+    }
     rect(x, y, boxSize, boxSize);
+  }
+
+  void teller() {
+    if (locked==true && soundTriggered==false) {
+      fileBox.play();
+      soundTriggered = true;
+    } 
+    if (locked==false && soundTriggered==true) {
+      soundTriggered = false;
+      return;
+    }
   }
 }
