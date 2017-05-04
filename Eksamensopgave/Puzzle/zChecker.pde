@@ -5,11 +5,11 @@ class Checker extends House {
   void check() { 
     // add corner points of house
 
-    poly1.add(new Vec2D(x-boxSize, y*2)); //toxmeister, med tilpasning
-    poly1.add(new Vec2D(x-boxSize, y*2-boxSize*2 ));
-    poly1.add(new Vec2D(x, y*2-boxSize*3)); //toxmeister, med tilpasning
-    poly1.add(new Vec2D(x+boxSize, y*2-boxSize*2));
-    poly1.add(new Vec2D(x+boxSize, y*2)); //toxmeister, med tilpasning
+    poly1.add(new Vec2D(x-boxSize, y)); //toxmeister, med tilpasning
+    poly1.add(new Vec2D(x-boxSize, y-boxSize*2 ));
+    poly1.add(new Vec2D(x, y-boxSize*3)); //toxmeister, med tilpasning
+    poly1.add(new Vec2D(x+boxSize, y-boxSize*2));
+    poly1.add(new Vec2D(x+boxSize, y)); //toxmeister, med tilpasning
 
     // check if mouse pos is inside
     if (poly1.containsPoint(new Vec2D(mouseX, mouseY))) { //toxmeister, med tilpasning

@@ -1,24 +1,22 @@
 
 import toxi.geom.*;
 import processing.sound.*;
-SoundFile file;
+SoundFile fileBox;
+SoundFile fileTriangle;
 
 ArrayList<Box> gameObjects;
 Box myBox1;
 Box myBox2;
 
-//ArrayList<Triangle> gameObejcts;
 Triangle myTriangle;
 
-House myHouse;
-
 Checker myChecker;
+House myHouse;
 
 void setup() {
   size(700, 700);
 
-myChecker = new Checker();
-
+  myChecker = new Checker();
   myHouse = new House();
 
   gameObjects = new ArrayList<Box>();
@@ -28,36 +26,33 @@ myChecker = new Checker();
   gameObjects.add(myBox1);
   gameObjects.add(myBox2);
 
-  //gameObjects = new ArrayList<Triangle>();
   myTriangle = new Triangle(400, 200);
   gameObjects.add(myTriangle);
 
-  file= new SoundFile(this, "square1.mp3"); //importerer filen fra "data". Filen stammer fra Cambridge Dictionary
-
-  fill(153);
+  fileBox= new SoundFile(this, "square.mp3"); //importerer filen fra "data". Filen stammer fra Oxford Dictionary
+  fileTriangle= new SoundFile(this, "triangle.mp3"); //importerer filen fra "data". Filen stammer fra Oxford Dictionary
 }
 
 void draw() {   
   background(#00ECFF); //tyrkisblå
-  
-  if (sqrt(pow(abs(myHouse.x - myBox1.x),2)+pow(abs(myHouse.y - myBox1.y),2)) < 100)
-    println("close");
-    else println("not close");
 
   myTriangle.check();
   myTriangle.display();
-  
-  //stroke(0);
+  myTriangle.teller();
 
   myBox1.check();
   myBox1.display();
-
-  myBox2.check();
-  //myBox2.display();
-
-myChecker.check();
-
+  myBox1.teller();
+  
+  //myChecker.check();
   myHouse.display();
+
+  if (sqrt(pow(abs(myHouse.x - myBox1.x), 2)+pow(abs(myHouse.y - myBox1.y), 2)) < 50)
+    println("close");
+  else println("not close");
+
+  //myChecker.check();
+  //myHouse.display();
 }
 
 void mousePressed() { //https://processing.org/examples/mousefunctions.html
@@ -67,10 +62,8 @@ void mousePressed() { //https://processing.org/examples/mousefunctions.html
     obj.yOffset = mouseY-obj.y;
     if (obj.overBox) { 
       obj.locked = true; 
-      file.play();
       return;
     } else {
-      
       obj.locked = false;
     }
   }
