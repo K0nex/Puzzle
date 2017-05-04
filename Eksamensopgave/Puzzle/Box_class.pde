@@ -1,3 +1,4 @@
+
 class Box {
   float x;
   float y;
@@ -20,7 +21,7 @@ class Box {
   }
 
   void check() { 
-    // Test if the cursor is over the box 
+    // Test if the cursor is over the box (https://processing.org/tutorials/interactivity/)
     if (mouseX > x-boxSize && mouseX < x+boxSize && 
       mouseY > y-boxSize && mouseY < y+boxSize) {
       overBox = true;  
