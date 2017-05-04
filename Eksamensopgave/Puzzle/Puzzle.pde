@@ -44,13 +44,13 @@ void draw() {
   //myChecker.check();
   myHouse.display();
 
-  if (sqrt(pow(abs(myHouse.x - myBox1.x), 2)+pow(abs(myHouse.y -80 - myBox1.y), 2)) < 10) 
+  //if (sqrt(pow(abs(myHouse.x - myBox1.x), 2)+pow(abs(myHouse.y-80 - myBox1.y), 2)) < 10) 
+  // println("close");
+  //else println("not close");
+
+  if (sqrt(pow(abs(myHouse.x-80 - myTriangle1.x), 2)+pow(abs(myHouse.y-150 - myTriangle1.y), 2)) < 10)
     println("close");
   else println("not close");
-
-  if (abs(myChecker.x - myTriangle1.x)+abs(myChecker.y - myTriangle1.y) < 10)
-    println("close");
-  //else println("not close");
 }
 
 void mousePressed() { //https://processing.org/examples/mousefunctions.html
