@@ -42,6 +42,9 @@ class Box {
     } else {
       fill(153);
     }
+    if (boxHome==true) {
+      fill(255, 255, 0);
+    } 
     rect(x, y, boxSize, boxSize);
   }
 

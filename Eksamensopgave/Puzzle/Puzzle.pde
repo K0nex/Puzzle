@@ -6,6 +6,7 @@ SoundFile fileTriangle;
 
 boolean boxHome = false;
 boolean triangleHome = false;
+boolean done = false;
 
 ArrayList<Box> gameObjects;
 Box myBox1;
@@ -14,6 +15,7 @@ House myHouse;
 
 void setup() {
   size(700, 700);
+  //frameCount=0;
 
   myHouse = new House();
 
@@ -32,6 +34,14 @@ void setup() {
 void draw() {   
   background(#00ECFF); //tyrkisblå
 
+  pushStyle();
+  textSize(15);
+  fill(0);
+  textAlign(LEFT);
+  text("Flyt figurne indenfor stregerne", 10, 50);
+  text("og dan en ny figur :)", 10, 70);
+  popStyle();
+
   myHouse.display();
 
   myBox1.check();
@@ -44,10 +54,15 @@ void draw() {
 
   if (sqrt(pow(abs(myHouse.x - myBox1.x), 2)+pow(abs(myHouse.y-80 - myBox1.y), 2)) < 10) {
     boxHome = true;
-    if (sqrt(pow(abs(myHouse.x-80 - myTriangle1.x), 2)+pow(abs(myHouse.y-150 - myTriangle1.y), 2)) < 10) {
-      triangleHome = true;
-    }
+  } else {
+    boxHome = false;
   }
+  if (sqrt(pow(abs(myHouse.x-80 - myTriangle1.x), 2)+pow(abs(myHouse.y-150 - myTriangle1.y), 2)) < 10) {
+    triangleHome = true;
+  } else {
+    triangleHome = false;
+  }
+
 
   if (boxHome==true && triangleHome==true) {
     pushStyle();
@@ -55,7 +70,13 @@ void draw() {
     fill(0);
     textAlign(CENTER);
     text("Godt klaret", width/2, height/4);
+    textSize(20);
+    text("Spillet lukkes om lidt", width/2, height/3);
     popStyle();
+    noCursor();
+    if (frameCount > 650) {
+      exit();
+    }
   }
 }
 

@@ -31,6 +31,9 @@ class Triangle extends Box {
     } else {
       fill(153);
     }
+    if (triangleHome==true) {
+      fill(255, 255, 0);
+    } 
     triangle(x, y, x+80, y-80, x+160, y);
   }
 
