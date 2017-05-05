@@ -9,16 +9,12 @@ boolean triangleHome = false;
 
 ArrayList<Box> gameObjects;
 Box myBox1;
-
 Triangle myTriangle1;
-
-Checker myChecker;
 House myHouse;
 
 void setup() {
   size(700, 700);
 
-  myChecker = new Checker();
   myHouse = new House();
 
   gameObjects = new ArrayList<Box>();
@@ -36,16 +32,15 @@ void setup() {
 void draw() {   
   background(#00ECFF); //tyrkisblå
 
-  myTriangle1.check();
-  myTriangle1.display();
-  myTriangle1.teller();
+  myHouse.display();
 
   myBox1.check();
   myBox1.display();
   myBox1.teller();
 
-  //myChecker.check();
-  myHouse.display();
+  myTriangle1.check();
+  myTriangle1.display();
+  myTriangle1.teller();
 
   if (sqrt(pow(abs(myHouse.x - myBox1.x), 2)+pow(abs(myHouse.y-80 - myBox1.y), 2)) < 10) {
     boxHome = true;

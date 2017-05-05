@@ -14,7 +14,6 @@ class Triangle extends Box {
     poly.add(new Vec2D(x+160, y)); //toxmeister, med tilpasning
     // check if mouse pos is inside
     if (poly.containsPoint(new Vec2D(mouseX, mouseY))) { //toxmeister, med tilpasning
-      //println("bingo");
       overBox = true;  
       if (!locked) { 
         stroke(255); 
