@@ -38,8 +38,8 @@ void setup() { //Opsætter basis for programmet
   myTriangle1 = new Triangle(400, 200); //samme princip som ved myBox1
   gameObjects.add(myTriangle1); //myTriangle1 tilføjes til arraylisten og bliver en del af gameObejcts
 
-  fileBox= new SoundFile(this, "square.mp3"); //importerer filen fra "data". Filen stammer fra Oxford Dictionary http://www.oxfordlearnersdictionaries.com/media/english/uk_pron/s/squ/squar/square__gb_1.mp3
-  fileTriangle= new SoundFile(this, "triangle.mp3"); //importerer filen fra "data". Filen stammer fra Oxford Dictionary http://www.oxfordlearnersdictionaries.com/media/english/uk_pron/t/tri/trian/triangle__gb_2.mp3
+  fileBox= new SoundFile(this, "firkant.mp3"); //importerer filen fra "data". Filen stammer fra ordnet.dk http://static.ordnet.dk/mp3/11013/11013152_1.mp3
+  fileTriangle= new SoundFile(this, "trekant.mp3"); //importerer filen fra "data". Filen stammer fra ordnet.dk http://static.ordnet.dk/mp3/12002/12002243_1.mp3
 }
 
 void draw() { //dette skal køres i loop   
