@@ -50,7 +50,7 @@ class Box { //Der laves en class for Box
     rect(x, y, boxSize, boxSize); //tegner box'en. Placeringen sættes fra værdierne i contructoren
   }
 
-  void teller() { //teller-funktion, der fortæller navnet på box'en. Her er det det engelske "square"
+  void teller() { //teller-funktion, der fortæller navnet på box'en. Her er det "firkant"
     if (locked==true && soundTriggered==false) { //er der klikket på box'en og lyden har ikke været før så
       fileBox.play(); //afspiller den lydfilen for fileBox
       soundTriggered = true; //og sætter at lyden er afspillet til "true"

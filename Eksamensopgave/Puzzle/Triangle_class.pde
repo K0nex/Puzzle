@@ -38,7 +38,7 @@ class Triangle extends Box { //der laves en class for triangle, der udvider Box-
     triangle(x, y, x+80, y-80, x+160, y); //triangle tegnes. Punkter får den fra checker
   }
 
-  void teller() { //teller-funktion, der fortæller navnet på triangle. Her er det det engelske "triangle"
+  void teller() { //teller-funktion, der fortæller navnet på triangle. Her er det "trekant"
     if (locked==true && soundTriggered==false) { //er der klikket på triangle og lyden har ikke været før så
       fileTriangle.play(); //afspiller den lydfilen for fileTriangle
       soundTriggered = true; //og sætter at lyden er afspillet til "true"
