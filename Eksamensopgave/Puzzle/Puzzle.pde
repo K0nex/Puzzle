@@ -69,7 +69,7 @@ void draw() { //dette skal køres i loop
   } else {
     boxHome = false; //hvis den ikke er, så er boxHome "falsk" altså ikke på plads
   }
-  if (sqrt(pow(abs(myHouse.x-80 - myTriangle1.x), 2)+pow(abs(myHouse.y-150 - myTriangle1.y), 2)) < 10) { //dette udnytter afstandsformlen til at finde afstanden fra center af house og triangle, og når afstanden når under 10, så opfyldes statementet og nedenstående sker
+  if (sqrt(pow(abs(myHouse.x-80 - myTriangle1.x), 2)+pow(abs(myHouse.y-160 - myTriangle1.y), 2)) < 10) { //dette udnytter afstandsformlen til at finde afstanden fra center af house og triangle, og når afstanden når under 10, så opfyldes statementet og nedenstående sker
     triangleHome = true; //hvis overstående kriterie er opfyldt, så sættes triangleHome til "true"
   } else {
     triangleHome = false; //hvis den ikke er, så er triangleHome "falsk" altså ikke på plads

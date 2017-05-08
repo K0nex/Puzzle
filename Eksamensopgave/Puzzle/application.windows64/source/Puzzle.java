@@ -24,7 +24,7 @@ Skrevet af Mark L. Petersen, HTX3
  Dette er eksamensopgaven i Programmering C p\u00e5 HTX.
  Opgaven er at lave en brugeroplevelse, hvor brugeren kan interaggere med programmet.
  Jeg har lavet et spil, der s\u00e6tter fokus p\u00e5 geometri og sprog.
- M\u00e5lgruppen er 
+ M\u00e5lgruppen er b\u00f8rn i alderen 3-6 \u00e5r.
  
  Hj\u00e6lp er hentet ved bl.a. Kasper Kristensen og processing.org
  
@@ -88,7 +88,7 @@ public void draw() { //dette skal k\u00f8res i loop
   } else {
     boxHome = false; //hvis den ikke er, s\u00e5 er boxHome "falsk" alts\u00e5 ikke p\u00e5 plads
   }
-  if (sqrt(pow(abs(myHouse.x-80 - myTriangle1.x), 2)+pow(abs(myHouse.y-150 - myTriangle1.y), 2)) < 10) { //dette udnytter afstandsformlen til at finde afstanden fra center af house og triangle, og n\u00e5r afstanden n\u00e5r under 10, s\u00e5 opfyldes statementet og nedenst\u00e5ende sker
+  if (sqrt(pow(abs(myHouse.x-80 - myTriangle1.x), 2)+pow(abs(myHouse.y-160 - myTriangle1.y), 2)) < 10) { //dette udnytter afstandsformlen til at finde afstanden fra center af house og triangle, og n\u00e5r afstanden n\u00e5r under 10, s\u00e5 opfyldes statementet og nedenst\u00e5ende sker
     triangleHome = true; //hvis overst\u00e5ende kriterie er opfyldt, s\u00e5 s\u00e6ttes triangleHome til "true"
   } else {
     triangleHome = false; //hvis den ikke er, s\u00e5 er triangleHome "falsk" alts\u00e5 ikke p\u00e5 plads
@@ -97,12 +97,14 @@ public void draw() { //dette skal k\u00f8res i loop
 
   if (boxHome==true && triangleHome==true) { //n\u00e5r box og triangle er placeret rigtigt, s\u00e5 kan nedenst\u00e5ende forl\u00f8be. Dette sker n\u00e5r spillets opgave er l\u00f8st
     pushStyle(); //gemmer tidligere stil
-    textSize(100); //s\u00e6tter tekstst\u00f8rrelsen til 100 pixel
+    textSize(50); //s\u00e6tter tekstst\u00f8rrelsen til 50 pixel
     fill(0); //farven er sort
     textAlign(CENTER); //teksten justeres til center
-    text("Godt klaret", width/2, height/4); //tekst der fort\u00e6ller af opgaven er udf\u00f8rt + placeringen af teksten
-    textSize(20); //s\u00e6tter en ny tekstst\u00f8rrelse 
-    text("Spillet lukkes om lidt", width/2, height/3); //ny tekst, der fort\u00e6ller at spillet lukker om et \u00f8jeblik
+    text("Du har bygget et hus", width/2, height/4); //tekst der fort\u00e6ller af opgaven er udf\u00f8rt + placeringen af teksten
+    textSize(30); //s\u00e6tter en ny tekstst\u00f8rrelse
+    text("Godt klaret", width/2, height/3.25f); //ny tekst, der giver ros til brugeren
+    textSize(15); //s\u00e6tter en ny tekstst\u00f8rrelse 
+    text("Spillet lukkes om lidt", width/2, height/2.9f); //ny tekst, der fort\u00e6ller at spillet lukker om et \u00f8jeblik
     popStyle(); //forts\u00e6tter hvor pushStyle gemte
     noCursor(); //skjuler musen for at stoppe brugeren med at interaggere
     if (frameCount > 650) { //hvis overst\u00e5ende if-statement er opfyldt, s\u00e5 starter en frameCounter og n\u00e5r den n\u00e5r over 650 frames, s\u00e5 starter nedenst\u00e5ende
