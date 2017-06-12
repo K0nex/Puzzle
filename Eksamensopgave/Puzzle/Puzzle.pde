@@ -88,8 +88,9 @@ void draw() { //dette skal køres i loop
     text("Spillet lukkes om lidt", width/2, height/2.9); //ny tekst, der fortæller at spillet lukker om et øjeblik
     popStyle(); //fortsætter hvor pushStyle gemte
     noCursor(); //skjuler musen for at stoppe brugeren med at interaggere
-    if (frameCount > 650) { //hvis overstående if-statement er opfyldt, så starter en frameCounter og når den når over 650 frames, så starter nedenstående
-      exit(); //efter at spillets opgave er klaret, så går der 650 frames og spillet lukker
+    millis(); //starter en timer
+    if (millis() > 8000) { //hvis overstående if-statement er opfyldt, så starter en timer og når den når over 8 sekunder, så starter nedenstående
+      exit(); //efter at spillets opgave er klaret, så går der 8 sekunder og spillet lukker
     }
   }
 }
