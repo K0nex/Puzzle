@@ -5,7 +5,7 @@ Skrevet af Mark L. Petersen, HTX3
  Dette er eksamensopgaven i Programmering C på HTX.
  Opgaven er at lave en brugeroplevelse, hvor brugeren kan interaggere med programmet.
  Jeg har lavet et spil, der sætter fokus på geometri og sprog.
- Målgruppen er 
+ Målgruppen er børn i alderen 3-6 år.
  
  Hjælp er hentet ved bl.a. Kasper Kristensen og processing.org
  
@@ -69,7 +69,7 @@ void draw() { //dette skal køres i loop
   } else {
     boxHome = false; //hvis den ikke er, så er boxHome "falsk" altså ikke på plads
   }
-  if (sqrt(pow(abs(myHouse.x-80 - myTriangle1.x), 2)+pow(abs(myHouse.y-150 - myTriangle1.y), 2)) < 10) { //dette udnytter afstandsformlen til at finde afstanden fra center af house og triangle, og når afstanden når under 10, så opfyldes statementet og nedenstående sker
+  if (sqrt(pow(abs(myHouse.x-80 - myTriangle1.x), 2)+pow(abs(myHouse.y-160 - myTriangle1.y), 2)) < 10) { //dette udnytter afstandsformlen til at finde afstanden fra center af house og triangle, og når afstanden når under 10, så opfyldes statementet og nedenstående sker
     triangleHome = true; //hvis overstående kriterie er opfyldt, så sættes triangleHome til "true"
   } else {
     triangleHome = false; //hvis den ikke er, så er triangleHome "falsk" altså ikke på plads
@@ -78,12 +78,14 @@ void draw() { //dette skal køres i loop
 
   if (boxHome==true && triangleHome==true) { //når box og triangle er placeret rigtigt, så kan nedenstående forløbe. Dette sker når spillets opgave er løst
     pushStyle(); //gemmer tidligere stil
-    textSize(100); //sætter tekststørrelsen til 100 pixel
+    textSize(50); //sætter tekststørrelsen til 50 pixel
     fill(0); //farven er sort
     textAlign(CENTER); //teksten justeres til center
-    text("Godt klaret", width/2, height/4); //tekst der fortæller af opgaven er udført + placeringen af teksten
-    textSize(20); //sætter en ny tekststørrelse 
-    text("Spillet lukkes om lidt", width/2, height/3); //ny tekst, der fortæller at spillet lukker om et øjeblik
+    text("Du har bygget et hus", width/2, height/4); //tekst der fortæller af opgaven er udført + placeringen af teksten
+    textSize(30); //sætter en ny tekststørrelse
+    text("Godt klaret", width/2, height/3.25); //ny tekst, der giver ros til brugeren
+    textSize(15); //sætter en ny tekststørrelse 
+    text("Spillet lukkes om lidt", width/2, height/2.9); //ny tekst, der fortæller at spillet lukker om et øjeblik
     popStyle(); //fortsætter hvor pushStyle gemte
     noCursor(); //skjuler musen for at stoppe brugeren med at interaggere
     if (frameCount > 650) { //hvis overstående if-statement er opfyldt, så starter en frameCounter og når den når over 650 frames, så starter nedenstående
